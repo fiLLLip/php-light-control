@@ -1,9 +1,9 @@
 ﻿<?php
 
 //////////////////////////////////////////
-// PHP/Tellstick light controller		//
-// Developed for Windows				//
-// License:(CC BY-SA 3.0)				//
+// PHP/Tellstick light controller	//
+// Developed for Windows		//
+// License:(CC BY-SA 3.0)		//
 // Author: Filip Andre Larsen Tomren    //
 //////////////////////////////////////////
 
