@@ -2,14 +2,14 @@
 
 //////////////////////////////////////////
 // PHP/Tellstick light controller		//
-// Developed for Windows				//
+// Developed for Windows/Linux			//
 // License:(CC BY-SA 3.0)				//
 // Author: Filip Andre Larsen Tomren    //
 //////////////////////////////////////////
 
 class Tool {
 	
-	protected $tdtool_path = '"%ProgramFiles(x86)%\Telldus\tdtool.exe"';
+	protected $tdtool_path = 'tdtool';
 	protected $allLights = '';
 	
 	function __construct()

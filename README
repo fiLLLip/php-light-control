@@ -1,8 +1,9 @@
 //////////////////////////////////////////
-// PHP/Tellstick light controller       //
-// Developed for Windows                //
-// License:(CC BY-SA 3.0)               //
+// PHP/Tellstick light controller		//
+// Developed for Windows/Linux			//
+// License:(CC BY-SA 3.0)				//
 // Author: Filip Andre Larsen Tomren    //
 //////////////////////////////////////////
 
 Developed on Windows 7 computer running WAMPserver and TelldusCenter with Tellstick.
+Also tested on Ubuntu Server 12.04 running telldus-core.
