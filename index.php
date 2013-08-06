@@ -36,8 +36,7 @@ $lights = $tools->listLights();
 
 if (isset($_GET['tool']) && isset($_GET['id']) && isset($_GET['method'])) {
 	$method = $_GET['method'];
-	$tools->$method($_GET['id']);
-	die();
+	die($tools->$method($_GET['id']));
 }
 ?>
 
@@ -53,9 +52,11 @@ if (isset($_GET['tool']) && isset($_GET['id']) && isset($_GET['method'])) {
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<title>PHP Light Manager</title>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link type="text/css" href="css/jquery.mobile.toast.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.toast.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
     <style>
         .lighton{
             background-color: #fffca3;
@@ -73,7 +74,6 @@ if (isset($_GET['tool']) && isset($_GET['id']) && isset($_GET['method'])) {
 
 	<div data-role="content">
         <ul data-role="listview">
-            <li><a  class="light lighton" id="123" href="#">DUMMY</a></li>
             <?php
                 for($i = 1;$i<(count($lights));$i++)
                 {
@@ -94,7 +94,7 @@ if (isset($_GET['tool']) && isset($_GET['id']) && isset($_GET['method'])) {
 	<div data-role="footer" data-position="fixed">
 		<h4>A brennheIT Production</h4>
 	</div><!-- /footer -->
-    <div id="loader"></div>
+    <div id="toast" data-role="toast">content</div>
 	
 </div><!-- /page -->
 
