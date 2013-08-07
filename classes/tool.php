@@ -25,8 +25,6 @@
 class Tool {
 
 	protected $_tdToolPath;
-
-	protected $_allLights = '';
 	
 	function __construct()
 	{
@@ -35,16 +33,17 @@ class Tool {
         } else {
             $this->_tdToolPath = 'tdtool';
         }
-		exec($this->_tdToolPath . ' --list', $arr);
-		foreach ($arr as $key => $value){
-			// Split into ID, name, status on tab
-			$arr[$key] = preg_split("[\t]", $value);
-		}
-		$this->_allLights = $arr;
 	}
 	
 	public function listLights() 
 	{
+        exec($this->_tdToolPath . ' --list', $arr);
+        foreach ($arr as $key => $value){
+            // Split into ID, name, status on tab
+            $arr[$key] = preg_split("[\t]", $value);
+        }
+        $allLights = $arr;
+
 		// Return the allLights array created in construct
 		// with other values
 		$returnLights[] = array();
@@ -54,14 +53,14 @@ class Tool {
 		
 		// $i = 1;$i<(count($this->allLights)-1);$i++
 		// First and last line of array is crap, hence the = 1 in init and - 1 after count
-		for($i = 1;$i<(count($this->_allLights)-1);$i++)
+		for($i = 1;$i<(count($allLights)-1);$i++)
 		{
-			$lightValue = $this->_allLights[$i][2];
+			$lightValue = $allLights[$i][2];
 			if(strpos($lightValue, $dimmedString) !== false){
 				// Divide by 2.55 due to dim range from 1-255 but percent is 1-100.
 				$lightValue = round(str_replace($dimmedString, '', $lightValue) / 2.55) . '%';
 			}
-			array_push($returnLights, array($this->_allLights[$i][0], $this->_allLights[$i][1], $lightValue));
+			array_push($returnLights, array($allLights[$i][0], $allLights[$i][1], $lightValue));
 		}
 		return $returnLights;
 	}

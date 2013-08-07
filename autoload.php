@@ -23,7 +23,7 @@
 
 function __autoload($class_name) 
 {
-	$filename = './classes/' . $class_name . '.php';
+	$filename = './classes/' . strtolower($class_name) . '.php';
 	try{
 		include $filename;
 	} catch (Exception $e) {

@@ -32,12 +32,13 @@ require './autoload.php';
 
 $tools = new Tool;
 
-$lights = $tools->listLights();
 
 if (isset($_GET['tool']) && isset($_GET['id']) && isset($_GET['method'])) {
 	$method = $_GET['method'];
 	die($tools->$method($_GET['id']));
 }
+
+$lights = $tools->listLights();
 ?>
 
 <!DOCTYPE html> 
