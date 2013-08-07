@@ -1,11 +1,13 @@
-PHP Light Control
+# PHP Light Control
 
 Controls Tellstick lighting with a smooth and familiar interface.
 Developed on Windows 7 computer running WAMPserver and TelldusCenter with Tellstick.
 Also tested on Ubuntu Server 12.04 running telldus-core.
 
-Usage
-Change the $tdtool_path in classes/Tool.php to correspond with your tdtool execution path.
+## Usage
+Change the $tdtool_path in classes/Tool.php to correspond with your tdtool execution path when using windows.
+
+# License
 
 Copyright 2013 fiLLLip
 
